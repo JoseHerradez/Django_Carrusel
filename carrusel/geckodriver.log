@@ -1,0 +1,73 @@
+1508561400375	geckodriver	INFO	geckodriver 0.19.0
+1508561400381	geckodriver	INFO	Listening on 127.0.0.1:48235
+1508561401524	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.dMxtlGZEA9J0"
+1508561406100	Marionette	INFO	Listening on port 40991
+1508561406486	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508561428704	geckodriver	INFO	geckodriver 0.19.0
+1508561428710	geckodriver	INFO	Listening on 127.0.0.1:40089
+1508561429844	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Wm8sabxixKAA"
+1508561435600	Marionette	INFO	Listening on port 34059
+1508561435749	Marionette	WARN	TLS certificate errors will be ignored for this session
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: can't access dead object
+Full stack: find_@chrome://marionette/content/element.js:290:7
+element.find/</findElements<@chrome://marionette/content/element.js:256:17
+evalFn@chrome://marionette/content/wait.js:70:7
+
+*************************
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: can't access dead object
+Full stack: find_@chrome://marionette/content/element.js:290:7
+element.find/</findElements<@chrome://marionette/content/element.js:256:17
+evalFn@chrome://marionette/content/wait.js:70:7
+
+*************************
+1508561497635	geckodriver	INFO	geckodriver 0.19.0
+1508561497641	geckodriver	INFO	Listening on 127.0.0.1:46973
+1508561498775	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.KAq12XeVT01O"
+1508561503885	Marionette	INFO	Listening on port 41543
+1508561504280	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508561534483	Marionette	INFO	New connections will no longer be accepted
+1508561556407	geckodriver	INFO	geckodriver 0.19.0
+1508561556413	geckodriver	INFO	Listening on 127.0.0.1:55133
+1508561557551	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.XpnCsY1RV8LP"
+1508561562741	Marionette	INFO	Listening on port 39895
+1508561562828	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508561564016	Marionette	INFO	New connections will no longer be accepted
+1508561569290	geckodriver	INFO	geckodriver 0.19.0
+1508561569296	geckodriver	INFO	Listening on 127.0.0.1:58583
+1508561570426	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.N1m7zUXaeS3o"
+1508561575004	Marionette	INFO	Listening on port 46243
+1508561575550	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508561576631	Marionette	INFO	New connections will no longer be accepted
+1508561596541	geckodriver	INFO	geckodriver 0.19.0
+1508561596547	geckodriver	INFO	Listening on 127.0.0.1:49279
+1508561597679	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Dcx8RCfYRDn8"
+1508561603104	Marionette	INFO	Listening on port 38663
+1508561603262	Marionette	WARN	TLS certificate errors will be ignored for this session
+1508561613345	Marionette	INFO	New connections will no longer be accepted
+1508561631697	geckodriver	INFO	geckodriver 0.19.0
+1508561631704	geckodriver	INFO	Listening on 127.0.0.1:40217
+1508561632830	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.DuOiTiHLd7Zm"
+1508561637452	Marionette	INFO	Listening on port 34923
+1508561637529	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/prism/prism.js, line 11: TypeError: o is undefined
+1508561642769	Marionette	INFO	New connections will no longer be accepted
+1508561650426	geckodriver	INFO	geckodriver 0.19.0
+1508561650432	geckodriver	INFO	Listening on 127.0.0.1:55373
+1508561651584	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.r5HwuPwXyJz9"
+1508561656804	Marionette	INFO	Listening on port 41627
+1508561656883	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/prism/prism.js, line 11: TypeError: o is undefined
+1508561661612	Marionette	INFO	New connections will no longer be accepted
+1508561745794	geckodriver	INFO	geckodriver 0.19.0
+1508561745800	geckodriver	INFO	Listening on 127.0.0.1:46951
+1508561746930	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.XsTtnKOAsjSg"
+1508561751927	Marionette	INFO	Listening on port 39193
+1508561752003	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://127.0.0.1:8000/static/prism/prism.js, line 11: TypeError: o is undefined
+1508561756761	Marionette	INFO	New connections will no longer be accepted
