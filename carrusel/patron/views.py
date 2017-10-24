@@ -66,6 +66,9 @@ def generar(request, pk=0):
     return render(request, 'carousel.html', {'htmlCode': html["code"].render(), 'cssCode': css})
 
 def armarCarruselHTML(data):
+    if data is None:
+        return None
+
     doc = dominate.document(title='Carousel')
     doc2 = dominate.document(title='Carousel')
 

@@ -1,15 +1,17 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h1>New Content</h1>
+    <h2>Contenido</h2>
+    <hr style="border-width: 2px; border-color: #999999">
     <form action="{% url 'new_content' pk %}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
         {% for form in forms%}
             <div class="form-group">
             {{ form.as_p }}
             </div>
+            <hr style="border-width: 2px; border-color: #999999">
             <br>
         {% endfor %}
-        <button type="submit" class="btn btn-default">Save</button>
+        <button type="submit" class="btn btn-default">Crear Carrusel</button>
     </form>
 {% endblock %}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Carousel</title>
+  <title>Carrusel</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -13,15 +13,16 @@
 </head>
 <body>
   <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <a class="navbar-brand" href="{% url 'index' %}">PowerSoft</a>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'new_carousel' %}">Create carousel<span class="sr-only">(current)</span></a>
+          <button style="margin-top: 10px">
+              <a class="nav-link" href="{% url 'new_carousel' %}" style="color: #000;">
+                Create carousel<span class="sr-only">(current)</span>
+              </a>
+          </button>
         </li>
       </ul>
     </div>
@@ -30,7 +31,7 @@
     <div class="row">
       <div class="col-md-8">
         <div class="page-header">
-          <h1>Carousel</h1>
+          <h1>Carrusel</h1>
         </div>
         <!-- <a href="{% url 'generar' %}" type="button">Crear Carrusel</a> -->
         <div class="container">
