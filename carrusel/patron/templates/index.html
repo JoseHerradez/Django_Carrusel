@@ -1,49 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Carrusel</title>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-  <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
-</head>
-<body>
-  <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-    <a class="navbar-brand" href="{% url 'index' %}">PowerSoft</a>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <button style="margin-top: 10px">
-              <a class="nav-link" href="{% url 'new_carousel' %}" style="color: #000;">
-                Create carousel<span class="sr-only">(current)</span>
-              </a>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <div class="content container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="page-header">
-          <h1>Carrusel</h1>
-        </div>
-        <!-- <a href="{% url 'generar' %}" type="button">Crear Carrusel</a> -->
-        <div class="container">
-          {% block content %}
-          {% endblock %}
-        </div>
-      </div>
-    </div>
-  </div>
+{% extends 'base.html' %}
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-</body>
-</html>
+{% block content %}
+<div class="page-header text-center">
+    <h1>Tool of User Interfaces Design centered in Interaction Patterns</h1>
+</div>
+{% endblock %}

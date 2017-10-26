@@ -3,8 +3,8 @@ $('.slides').slick({
     asNavFor: '.captions',
     infinite: true,
     speed: 300,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    autoplay: false,
+    autoplaySpeed: 5000,
     arrows: false,
 }); 
 

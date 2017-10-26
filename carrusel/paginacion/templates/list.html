@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+      <tr>
+        <td>{{ contact }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if contacts.has_other_pages %}
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if contacts.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{ contacts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
+    {% endif %}
+
+    {% for i in contacts.paginator.page_range %}
+      {% if contacts.number == i %}
+      <li class="page-item active"><a class="page-link" href="?page={{ i }}"><span>{{ i }}</span></a></li>
+      {% else %}
+      <li class="page-item"><a class="page-link" href="?page={{ i }}"><span>{{ i }}</span></a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if contacts.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{ contacts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+    <li class="page-item disabled"><a class="page-link" href="#">&raquo;</a></li>
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+
+{% endblock %}
