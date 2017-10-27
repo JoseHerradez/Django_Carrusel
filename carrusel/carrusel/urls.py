@@ -16,11 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from patron import views as patronViews
-from paginacion import views as paginacionViews
+#from paginacion import views as paginacionViews
 
 urlpatterns = [
     url(r'^$', patronViews.index, name='index'),
-    url(r'^patron/', include('patron.urls')),
-    url(r'^paginacion/', paginacionViews.index, name='indexPaginacion'),
-    url(r'^admin/', admin.site.urls),
+    url(r'^patron/', include('patron.urls', namespace='carrusel-patron')),
+    url(r'^paginacion/', include('paginacion.urls', namespace='paginacion-patron')),
+    url(r'^admin/', admin.site.urls)
 ]

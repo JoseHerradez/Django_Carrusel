@@ -15,17 +15,17 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{% url 'index' %}">NineSoft</a>
+    <a class="navbar-brand" href="{% url 'carrusel-patron:index' %}">NineSoft</a>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'new_carousel' %}">
+          <a class="nav-link" href="{% url 'carrusel-patron:new_carousel' %}">
             Crear Carrusel<span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'indexPaginacion' %}">Crear Paginación</a>
+          <a class="nav-link" href="{% url 'paginacion-patron:index' %}">Crear Paginación</a>
         </li>
       </ul>
     </div>
