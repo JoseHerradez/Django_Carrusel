@@ -47,4 +47,4 @@ class PaginationTestCase(TestCase):
 		self.assertEquals(elems, ['ninesoft'])
 		
 		elems = self.paginator.get_elems_from_page(2.9).object_list
-		self.assertEquals(elems, ['asd', 'bobba', 'foo'])
+		self.assertEquals(elems, ['bar', 'dsa', 'sad'])

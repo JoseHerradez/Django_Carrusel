@@ -7,6 +7,16 @@
     <div class="row">
       {% csrf_token %}
       <div class="col-md-4 mb-2 offset-md-3">
+        <input type="text" class="form-control" id="newElem" name="newElem" placeholder="Elemento Nuevo" required>
+      </div>
+      <button type="submit" class="btn btn-secondary col-md-2 mb-2">Agregar</button>
+    </div>
+  </form>
+	
+  <form class="container text-center" action="{% url 'paginacion-patron:index' %}" method="POST">
+    <div class="row">
+      {% csrf_token %}
+      <div class="col-md-4 mb-2 offset-md-3">
         <input type="number" class="form-control" id="numberOfElements" name="numberOfElements" placeholder="Número de elementos por pagina" required>
       </div>
       <button type="submit" class="btn btn-secondary col-md-2 mb-2">Modificar</button>
