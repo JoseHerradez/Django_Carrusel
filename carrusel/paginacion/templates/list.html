@@ -2,45 +2,59 @@
 
 {% block content %}
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for contact in contacts %}
+<div class="container">
+  <form class="container text-center" action="{% url 'paginacion-patron:index' %}" method="POST">
+    <div class="row">
+      {% csrf_token %}
+      <div class="col-md-4 mb-2 offset-md-3">
+        <input type="number" class="form-control" id="numberOfElements" name="numberOfElements" placeholder="Número de elementos por pagina" required>
+      </div>
+      <button type="submit" class="btn btn-secondary col-md-2 mb-2">Modificar</button>
+    </div>
+  </form>
+  <br>
+
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td>{{ contact }}</td>
+        <th>Name</th>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
-
-{% if contacts.has_other_pages %}
-<nav aria-label="Page navigation example">
-  <ul class="pagination">
-    {% if contacts.has_previous %}
-    <li class="page-item"><a class="page-link" href="?page={{ contacts.previous_page_number }}">&laquo;</a></li>
-    {% else %}
-    <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
-    {% endif %}
-
-    {% for i in contacts.paginator.page_range %}
-      {% if contacts.number == i %}
-      <li class="page-item active"><a class="page-link" href="?page={{ i }}"><span>{{ i }}</span></a></li>
+    </thead>
+    <tbody>
+      {% for contact in contacts %}
+        <tr>
+          <td>{{ contact }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% if contacts.has_other_pages %}
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      {% if contacts.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ contacts.previous_page_number }}&show={{ number }}">&laquo;</a></li>
       {% else %}
-      <li class="page-item"><a class="page-link" href="?page={{ i }}"><span>{{ i }}</span></a></li>
+      <li class="page-item disabled"><a class="page-link" href="#">&laquo;</a></li>
       {% endif %}
-    {% endfor %}
+  
+      {% for i in contacts.paginator.page_range %}
+        {% if contacts.number == i %}
+        <li class="page-item active"><a class="page-link" href="?page={{ i }}&show={{ number }}"><span>{{ i }}</span></a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}&show={{ number }}"><span>{{ i }}</span></a></li>
+        {% endif %}
+      {% endfor %}
+  
+      {% if contacts.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ contacts.next_page_number }}&show={{ number }}">&raquo;</a></li>
+      {% else %}
+      <li class="page-item disabled"><a class="page-link" href="#">&raquo;</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</div>
 
-    {% if contacts.has_next %}
-    <li class="page-item"><a class="page-link" href="?page={{ contacts.next_page_number }}">&raquo;</a></li>
-    {% else %}
-    <li class="page-item disabled"><a class="page-link" href="#">&raquo;</a></li>
-    {% endif %}
-  </ul>
-</nav>
 {% endif %}
 
 {% endblock %}
