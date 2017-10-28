@@ -9,8 +9,6 @@ class CarouselForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'count': forms.NumberInput(attrs={'class': 'form-control'}),
-            'circular': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
-            'auto': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'timer': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
