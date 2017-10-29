@@ -5,6 +5,12 @@ from django.urls import reverse_lazy
 from paginacion.models import List, ListElem
 
 def index(request):
+    
+    list=List(ident=1)
+    list.save()
+    listElem=ListElem(ident=list,elem='elemento1')
+    listElem.save()
+    
     list_id = List.objects.filter(ident=1)[0]
     contact_list = ListElem.objects.filter(ident=list_id)
     numberOfElement = 2

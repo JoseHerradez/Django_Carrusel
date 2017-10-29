@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
 
-class Seleniumtests(unittest.TestCase):
+class SeleniumPaginacion(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()
         self.driver.implicitly_wait(30)
@@ -15,30 +15,22 @@ class Seleniumtests(unittest.TestCase):
         self.verificationErrors = []
         self.accept_next_alert = True
     
-    def test_seleniumtests(self):
+    def test_1(self):
         driver = self.driver
         driver.get(self.base_url)
-        
+        driver.find_element_by_link_text("NineSoft").click()
         driver.find_element_by_link_text(u"Crear Paginación").click()
-        driver.find_element_by_link_text(u"»").click()
-        driver.find_element_by_link_text("1").click()
-        driver.find_element_by_xpath("//li[3]/a/span").click()
-        driver.find_element_by_link_text(u"«").click()
+        time.sleep(1)
+        driver.find_element_by_id("newElem").clear()
+        driver.find_element_by_id("newElem").send_keys("elem")
+        driver.find_element_by_xpath("//button[@type='submit']").click()
         time.sleep(1)
         driver.find_element_by_link_text(u"»").click()
         driver.find_element_by_link_text(u"«").click()
         driver.find_element_by_id("numberOfElements").clear()
         driver.find_element_by_id("numberOfElements").send_keys("1")
-        driver.find_element_by_xpath("//button[@type='submit']").click()
-        driver.find_element_by_id("numberOfElements").clear()
         time.sleep(1)
-        driver.find_element_by_id("numberOfElements").send_keys("2")
-        time.sleep(1)
-        driver.find_element_by_xpath("//button[@type='submit']").click()
-        driver.find_element_by_id("numberOfElements").clear()
-        driver.find_element_by_id("numberOfElements").send_keys("3")
-        time.sleep(1)
-        driver.find_element_by_xpath("//button[@type='submit']").click()
+        driver.find_element_by_xpath("(//button[@type='submit'])[2]").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
@@ -67,4 +59,3 @@ class Seleniumtests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
