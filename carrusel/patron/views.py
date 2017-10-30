@@ -3,9 +3,9 @@ from django import forms
 from django.http import HttpResponseRedirect, HttpResponse, HttpResponseForbidden
 from django.urls import reverse_lazy
 from django.views.generic import *
-
 from patron.forms import ContentForm, CarouselForm
 from patron.models import *
+
 
 import dominate
 from dominate.tags import *
@@ -18,7 +18,7 @@ def new_carousel(request):
         form = CarouselForm(request.POST)
         if form.is_valid():
             carousel = form.save()
-            return redirect('new_content', carousel.id)
+            return redirect('carrusel-patron:new_content', carousel.id)
     else:
         form = CarouselForm()
     return render(request, 'new_carousel.html', {'form': form})
@@ -37,8 +37,8 @@ def new_content(request, pk):
                 content.save()
             else:
                 print("invalid")
-                redirect('new_carousel')
-        return redirect('generar', carousel.id)
+                redirect('carrusel-patron:new_carousel')
+        return redirect('carrusel-patron:generar', carousel.id)
     else:
         forms = []
         for i in count:

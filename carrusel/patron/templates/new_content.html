@@ -7,7 +7,7 @@
         <h2>Contenido</h2>
     </div>
 
-    <form action="{% url 'new_content' pk %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'carrusel-patron:new_content' pk %}" method="POST" enctype="multipart/form-data">
         {%csrf_token%}
         {% for form in forms%}
             <div class="form-group">
