@@ -1,0 +1,14 @@
+{% extends 'link1.html' %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "interno 1" "/interno1" %}
+{% endblock %}
+
+{% block links %}
+    <p>Contenido nterno1</p>
+
+    <a href="interno1/interno2">interno 2</a>
+{% endblock %}
