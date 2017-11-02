@@ -17,14 +17,16 @@
     {% render_breadcrumbs %}
 
 
-{#    <nav aria-label="breadcrumb" role="navigation">#}
-{#      <ol class="breadcrumb">#}
-{#        <li class="breadcrumb-item"><a href="/breadcrumbs">Home</a></li>#}
-{#        <li class="breadcrumb-item"><a href="/breadcrumbs/link1">Link 1</a></li>#}
-{#        <li class="breadcrumb-item"><a href="/breadcrumbs/link2">Link 2</a></li>#}
-{#        <li class="breadcrumb-item active" aria-current="page">Link 3</li>#}
-{#      </ol>#}
-{#    </nav>#}
+  <form class="container text-center" action="{% url 'breadcrumbs-patron:index' %}" method="POST">
+        <div class="row">
+          {% csrf_token %}
+          <div class="col-md-4 mb-2 offset-md-3">
+            <input type="text" class="form-control" id="newElem" name="newElem" placeholder="Elemento Nuevo" required>
+          </div>
+          <button type="submit" class="btn btn-secondary col-md-2 mb-2">Agregar</button>
+        </div>
+    </form>
+
 </div>
     {% block links %}
 <div class="links">
