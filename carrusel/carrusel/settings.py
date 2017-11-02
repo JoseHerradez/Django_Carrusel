@@ -70,6 +70,8 @@ TEMPLATES = [
     },
 ]
 
+BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
+
 WSGI_APPLICATION = 'carrusel.wsgi.application'
 
 
