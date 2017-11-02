@@ -6,14 +6,25 @@
     <div class="page-header text-center">
         <h3>Breadcrumbs</h3>
     </div>
-    <nav aria-label="breadcrumb" role="navigation">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/breadcrumbs">Home</a></li>
-        <li class="breadcrumb-item"><a href="/breadcrumbs/link1">Link 1</a></li>
-        <li class="breadcrumb-item"><a href="/breadcrumbs/link2">Link 2</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Link 3</li>
-      </ol>
-    </nav>
+
+    {% load django_bootstrap_breadcrumbs %}
+
+    {% block breadcrumbs %}
+        {% clear_breadcrumbs %}
+        {% breadcrumb "Home" "/breadcrumbs" %}
+    {%  endblock %}
+
+    {% render_breadcrumbs %}
+
+
+{#    <nav aria-label="breadcrumb" role="navigation">#}
+{#      <ol class="breadcrumb">#}
+{#        <li class="breadcrumb-item"><a href="/breadcrumbs">Home</a></li>#}
+{#        <li class="breadcrumb-item"><a href="/breadcrumbs/link1">Link 1</a></li>#}
+{#        <li class="breadcrumb-item"><a href="/breadcrumbs/link2">Link 2</a></li>#}
+{#        <li class="breadcrumb-item active" aria-current="page">Link 3</li>#}
+{#      </ol>#}
+{#    </nav>#}
 </div>
     {% block links %}
 <div class="links">
