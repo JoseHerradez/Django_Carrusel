@@ -37,12 +37,11 @@ def new_content(request, pk):
         for form in forms:
             if form.is_valid():
                 content = form.save(commit=False)
-                print(content)
                 content.breadcrumb = breadcrumb
                 content.save()
             else:
                 print("invalid")
-                redirect('breadcrumbs_content')
+                redirect('breadcrumbs-patron:new_breadcrumbs')
         return redirect('breadcrumbs-patron:generar', breadcrumb.id)
         #return render(request,'breadcrumbs.html')
     else:
@@ -53,8 +52,8 @@ def new_content(request, pk):
 
 def generar(request, pk):
     breadcrumbs = get_object_or_404(BreadcrumbsContent, id=pk)
-    bc = BreadcrumbsContent.objects.all()
-    print(bc)
+    # bc = BreadcrumbsContent.objects.all()
+    # print(bc)
     elements = BreadcrumbsContent.objects.filter(breadcrumb=pk).values()
     data = {
         'title': breadcrumbs.title,
@@ -63,7 +62,7 @@ def generar(request, pk):
     }
     html = armarBreadcrumbsHTML(data)
     with open('patron/templates/breadcrumbs.html', 'w') as f:
-        f.write("{% load static %}\n" + html["file"].render())        
+        f.write("{% load static %}\n" + html["file"].render())
     return render(request, 'breadcrumbs.html', {'htmlCode': html["code"].render()})
     
     
@@ -84,15 +83,9 @@ def armarBreadcrumbsHTML(data):
         link(rel='stylesheet', href="{% static 'patron/style.css' %}", type="text/css")
 
     with doc:
-        with nav(cls="breadcrumb"):
-            for e in data['elements']:
-                if e != last:
-                    a(e['title'], cls="breadcrumb-item", href=e['url'])
-                else:
-                    span(e['title'], cls="breadcrumb-item active")
-        br()
-        h3("Para lograr este breadcrumbs en su página web, sólo copie el siguiente código:", style="text-align: center;")
-        div(pre(code('{{ htmlCode }}', cls="language-html"), cls="language-html code-toolbar"), cls="code")
+        with div().add(ol()):
+            h3("Para poder tener el breadcrumbs generado en su página web, copie el siguiente código: ", style="text-align: center;")
+            div(pre(code('{{ htmlCode }}', cls="language-html")), cls="code")
         script(type="text/javascript", src="//code.jquery.com/jquery-1.11.0.min.js")
         script(type="text/javascript", src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
         script(type="text/javascript", src="{% static 'slick/slick.min.js' %}")
@@ -107,23 +100,4 @@ def armarBreadcrumbsHTML(data):
                 else:
                     span(e['title'], cls="breadcrumb-item active")
 
-
     return { 'file': doc, 'code': doc2 }
-
-def link1(request):
-    return render(request, 'link1.html')
-
-def interno1(request):
-    return render(request, 'interno1.html')
-
-def interno2(request):
-    return render(request, 'interno2.html')
-
-def interno3(request):
-    return render(request, 'interno3.html')
-
-def link2(request):
-    return render(request, 'link2.html')
-
-def link3(request):
-    return render(request, 'link3.html')
