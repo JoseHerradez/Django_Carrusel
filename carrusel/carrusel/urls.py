@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^$', patronViews.index, name='index'),
     url(r'^patron/', include('patron.urls', namespace='carrusel-patron')),
     url(r'^paginacion/', include('paginacion.urls', namespace='paginacion-patron')),
+    url(r'^breadcrumbs/', include('breadcrumbs.urls', namespace='breadcrumbs-patron')),
     url(r'^admin/', admin.site.urls)
 ]

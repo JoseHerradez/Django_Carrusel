@@ -31,8 +31,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_bootstrap_breadcrumbs',
     'patron.apps.PatronConfig',
     'paginacion.apps.PaginacionConfig',
+    'breadcrumbs.apps.BreadcrumbsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+BREADCRUMBS_TEMPLATE = "django_bootstrap_breadcrumbs/bootstrap4.html"
 
 WSGI_APPLICATION = 'carrusel.wsgi.application'
 

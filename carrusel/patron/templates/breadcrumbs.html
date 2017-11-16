@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Carousel</title>
+    <title>Breadcrumbs</title>
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Source+Sans+Pro:400,300" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{% static 'slick/slick.css' %}" rel="stylesheet" type="text/css">
@@ -11,26 +11,13 @@
     <link href="{% static 'patron/style.css' %}" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="slider">
-      <div class="slides">
-        <div class="slide">
-          <img src="{% static 'images/content/tree1_rpGHnvs.jpg' %}">
+    <div>
+      <ol>
+        <h3 style="text-align: center;">Para poder tener el breadcrumbs generado en su página web, copie el siguiente código: </h3>
+        <div class="code">
+          <pre><code class="language-html">{{ htmlCode }}</code></pre>
         </div>
-        <div class="slide">
-          <img src="{% static 'images/content/tree3_IxI1yFF.jpeg' %}">
-        </div>
-      </div>
-      <div class="controls">
-        <div class="captions">
-          <div class="caption">uno</div>
-          <div class="caption">dos</div>
-        </div>
-        <div class="pagination"></div>
-      </div><br>
-      <h3 style="text-align: center;">Para lograr este carrusel en tu pagina web, solo copia el siguiente codigo:</h3>
-      <div class="code">
-        <pre><code class="language-html">{{ htmlCode }}</code></pre>
-      </div>
+      </ol>
     </div>
     <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>

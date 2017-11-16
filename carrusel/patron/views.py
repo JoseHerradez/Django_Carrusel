@@ -60,7 +60,7 @@ def generar(request, pk=0):
     css = armarCarruselCSS()
 
     with open('patron/templates/carousel.html', 'w') as f:
-        f.write("{% load static %}\n" + html["file"].render())
+        f.write("{% extends 'base.html' %}\n"+ "{% load static %}\n" + "{% block content %}\n"+html["file"].render()+ "{% endblock %}\n")
     with open('static/patron/script.js', 'w') as f:
         f.write(js)
     return render(request, 'carousel.html', {'htmlCode': html["code"].render(), 'cssCode': css})

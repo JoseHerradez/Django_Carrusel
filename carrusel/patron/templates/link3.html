@@ -1,0 +1,12 @@
+{% extends 'breadcrumbs.html' %}
+
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {{ block.super }}
+    {% breadcrumb "Link 3" "/breadcrumbs/link3" %}
+{% endblock %}
+
+{% block links %}
+    <p>LINK 3</p>
+{% endblock %}
