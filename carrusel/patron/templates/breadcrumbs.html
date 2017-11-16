@@ -1,39 +1,29 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<div class="container">
-    <div class="page-header text-center">
-        <h3>Breadcrumbs</h3>
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Breadcrumbs</title>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Source+Sans+Pro:400,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'slick/slick.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'slick/slick-theme.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'prism/prism.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'patron/style.css' %}" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <nav class="breadcrumb">
+      <a class="breadcrumb-item" href="http://google.com">Home</a>
+      <a class="breadcrumb-item" href="http://usb.ve">Library</a>
+      <span class="breadcrumb-item active">Data</span>
+    </nav><br>
+    <h3 style="text-align: center;">Para lograr este breadcrumbs en su página web, sólo copie el siguiente código:</h3>
+    <div class="code">
+      <pre class="language-html code-toolbar"><code class="language-html">{{ htmlCode }}</code></pre>
     </div>
-
-    {% load django_bootstrap_breadcrumbs %}
-
-    {% block breadcrumbs %}
-        {% clear_breadcrumbs %}
-        {% breadcrumb "Home" "/breadcrumbs" %}
-    {%  endblock %}
-
-    {% render_breadcrumbs %}
-
-
-  <form class="container text-center" action="{% url 'breadcrumbs-patron:index' %}" method="POST">
-        <div class="row">
-          {% csrf_token %}
-          <div class="col-md-4 mb-2 offset-md-3">
-            <input type="text" class="form-control" id="newElem" name="newElem" placeholder="Elemento Nuevo" required>
-          </div>
-          <button type="submit" class="btn btn-secondary col-md-2 mb-2">Agregar</button>
-        </div>
-    </form>
-
-</div>
-    {% block links %}
-<div class="links">
-    <a href="link1">LINK1</a>
-    <a href="link2">LINK2</a>
-    <a href="link3">LINK3</a>
-</div>
-
-{% endblock %}
-{% endblock %}
+    <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="{% static 'slick/slick.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'prism/prism.js' %}" type="text/javascript"></script>
+    <script src="{% static 'patron/script.js' %}" type="text/javascript"></script>
+  </body>
+</html>

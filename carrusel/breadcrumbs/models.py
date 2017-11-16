@@ -5,6 +5,7 @@ from django.db import models
 
 class BreadcrumbsLevels(models.Model):
     niveles = models.IntegerField()
+    elements = None
 
 class BreadcrumbsContent(models.Model):
     title = models.CharField(max_length=30)
