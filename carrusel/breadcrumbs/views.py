@@ -56,13 +56,13 @@ def generar(request, pk):
     # print(bc)
     elements = BreadcrumbsContent.objects.filter(breadcrumb=pk).values()
     data = {
-        'title': breadcrumbs.title,
-      	'url': breadcrumbs.url,
+    #    'title': breadcrumbs.title,
+    #  	'url': breadcrumbs.url,
         'elements': elements
     }
     html = armarBreadcrumbsHTML(data)
     with open('patron/templates/breadcrumbs.html', 'w') as f:
-        f.write("{% load static %}\n" + html["file"].render())
+        f.write("{% extends 'base.html' %}\n"+ "{% load static %}\n" + "{% block content %}\n"+html["file"].render()+ "{% endblock %}\n")
     return render(request, 'breadcrumbs.html', {'htmlCode': html["code"].render()})
     
     
@@ -83,7 +83,14 @@ def armarBreadcrumbsHTML(data):
         link(rel='stylesheet', href="{% static 'patron/style.css' %}", type="text/css")
 
     with doc:
+
         with div().add(ol()):
+            with nav(cls="breadcrumb"):
+                for e in data['elements']:
+                    if e != last:
+                        a(e['title'], cls="breadcrumb-item", href=e['url'])
+                    else:
+                        span(e['title'], cls="breadcrumb-item active")
             h3("Para poder tener el breadcrumbs generado en su página web, copie el siguiente código: ", style="text-align: center;")
             div(pre(code('{{ htmlCode }}', cls="language-html")), cls="code")
         script(type="text/javascript", src="//code.jquery.com/jquery-1.11.0.min.js")

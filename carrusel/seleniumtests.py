@@ -6,11 +6,16 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
+import os
 
 class Selenium(unittest.TestCase):
     def setUp(self):
+        #chromedriver = "/home/sahid/Descargas/chromedriver"
+        #os.environ["webdriver.chrome.driver"] = chromedriver
+        #system.setProperty("webdriver.chrome.drive","/home/sahid/")
+        #self.driver = webdriver.Chrome(chromedriver)
         self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
+        self.driver.implicitly_wait(50)
         self.base_url = "http://127.0.0.1:8000/"
         self.verificationErrors = []
         self.accept_next_alert = True
@@ -32,14 +37,14 @@ class Selenium(unittest.TestCase):
         driver.find_element_by_id("id_description").clear()
         driver.find_element_by_id("id_description").send_keys("desc1")
         driver.find_element_by_id("id_image").clear()
-        driver.find_element_by_id("id_image").send_keys("/home/carlos/git/Django_Patrones/carrusel/static/images/tree1.jpg")
+        driver.find_element_by_id("id_image").send_keys("/home/sahid/PycharmProjects/Django_Patrones/carrusel/static/images/tree1.jpg")
         driver.find_element_by_id("id_1-title").clear()
         driver.find_element_by_id("id_1-title").send_keys("dos")
         driver.find_element_by_id("id_1-description").clear()
         driver.find_element_by_id("id_1-description").send_keys("desc2")
         time.sleep(1)
         driver.find_element_by_id("id_1-image").clear()
-        driver.find_element_by_id("id_1-image").send_keys("/home/carlos/git/Django_Patrones/carrusel/static/images/tree3.jpeg")
+        driver.find_element_by_id("id_1-image").send_keys("/home/sahid/PycharmProjects/Django_Patrones/carrusel/static/images/tree3.jpeg")
         driver.find_element_by_css_selector("button.btn.btn-default").click()
         
         time.sleep(2)
