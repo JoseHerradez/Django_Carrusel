@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_bootstrap_breadcrumbs',
     'patron.apps.PatronConfig',
     'paginacion.apps.PaginacionConfig',
     'breadcrumbs.apps.BreadcrumbsConfig',
